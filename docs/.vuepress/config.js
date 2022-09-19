@@ -1,10 +1,25 @@
+const moment = require('moment');//修改时间格式
+
 module.exports = {
+  base: "/docs/",//部署到github.io上，将 / 修改为 /docs/
   title: '满船清梦压星河',
   description: 'Peter Pan 的个人练习站',
   head: [//设置SEO优化
     ['meta', { name : "author", content: "满船清梦压星河"}],
     ['meta', { name : "keywords", content: "vuepress练习，个人博客部署，满船清梦压星河"}],
     ['link', { rel: 'icon', href: 'favicon.ico' }]
+  ],
+  plugins: [
+    [//时间格式化插件
+      '@vuepress/last-updated',
+      {
+        transformer: (timestamp, lang) => {
+          moment.locale("zh-cn")
+          // moment.locale(lang) //默认英文
+          return moment().format('LLLL'); // 2022年9月19日星期一晚上10点24分
+        }
+      }
+    ]
   ],
   themeConfig: {
     lastUpdated: '更新时间', // 最后更新时间展示

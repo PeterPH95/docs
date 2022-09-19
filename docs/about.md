@@ -12,8 +12,12 @@ sidebar: auto
 sidebar: auto
 ---
 ```
-#### 侧边栏练习
-#### 侧边栏练习
-### 侧边栏练习
+### github 检测修改
+> 我来监测github跟踪，显示当前修改时间，通过以下代码查看和提交
+```git
+git status //查看文件跟踪情况
+git commit -m"feat: about" //提交修改
+git config -l //查看配置项
+```
 ### 侧边栏练习
 ### 侧边栏练习
