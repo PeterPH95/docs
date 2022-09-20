@@ -5,9 +5,13 @@ module.exports = {
   title: '满船清梦压星河',
   description: 'Peter Pan 的个人练习站',
   head: [//设置SEO优化
-    ['meta', { name : "author", content: "满船清梦压星河"}],
-    ['meta', { name : "keywords", content: "vuepress练习，个人博客部署，满船清梦压星河"}],
-    ['link', { rel: 'icon', href: 'favicon.ico' }]
+    ['meta', { name: "author", content: "满船清梦压星河" }],
+    ['meta', { name: "keywords", content: "vuepress练习，个人博客部署，满船清梦压星河" }],
+    ['link', { rel: 'icon', href: 'favicon.ico' }],
+    ['link', { rel: 'manifest', href: '/manifest.json' }],
+    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
   ],
   plugins: [
     [//时间格式化插件
@@ -17,6 +21,16 @@ module.exports = {
           moment.locale("zh-cn")
           // moment.locale(lang) //默认英文
           return moment().format('LLLL'); // 2022年9月19日星期一晚上10点24分
+        }
+      }
+    ],
+    [//一个优秀的插件 pwa
+      '@vuepress/pwa', 
+      {
+        serviceWorker: true,
+        updatePopup: {
+          message: "有新东西！",
+          buttonText: "刷新"
         }
       }
     ]
