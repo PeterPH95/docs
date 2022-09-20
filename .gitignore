@@ -105,3 +105,6 @@ dist
 
 # 热更新
 .temp
+
+# 隐藏秘密信息
+secret.js

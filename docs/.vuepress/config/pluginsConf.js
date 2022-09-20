@@ -1,4 +1,5 @@
-const moment = require('moment');//修改时间格式
+const moment = require('moment')//修改时间格式
+const secret = require("./secret")
 
 module.exports = [
   [//时间格式化插件
@@ -30,8 +31,8 @@ module.exports = [
       // 其他的 Vssue 配置
       owner: 'PeterPH95',
       repo: 'docs',
-      clientId: '860169a38687d876a4d3',
-      clientSecret: '6a3535b4432e646a737017edb262c8387df002ba',
+      clientId: secret.clientId,
+      clientSecret: secret.clientSecret,
       autoCreateIssue: true
     }
   ],
