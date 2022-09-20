@@ -19,5 +19,8 @@ git status //查看文件跟踪情况
 git commit -m"feat: about" //提交修改
 git config -l //查看配置项
 ```
+### 这是评论组件 Vssue 的展示
+<Vssue :options="{ locale: 'zh' }"/>
+
 ### 侧边栏练习
-### 侧边栏练习
+

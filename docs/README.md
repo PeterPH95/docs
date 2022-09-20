@@ -1,5 +1,5 @@
 ---
-home: true
+# home: true
 # heroImage: /hero.png
 heroText: Hero
 tagline: Hero 
@@ -16,3 +16,9 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
 
 # Hello Peter
+
+
+## PWA
+> 演示 pwa 的弹窗效果
+
+> PWA 其中有一个能力就是把网站安装到系统桌面，以原生应用的体验来运行网站，使用户无需再找开浏览器输入网址进入网站，而是可以直接点击安装好的应用直接运行，给使网站访问缩短路径及增加网站的曝光度。
