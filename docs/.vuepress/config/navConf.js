@@ -10,5 +10,5 @@ module.exports = [//导航栏配置
     { text: 'Japanese', link: '/language/japanese/' }
   ]
 },
-{ text: 'External', link: 'https://google.com' },
+{ text: 'Github', link: 'https://github.com/PeterPH95/docs' },
 ]
