@@ -3,6 +3,18 @@ title: git学习
 sidebar: auto
 ---
 
+## 找项目，扩展视野
+> [Github trending](https://github.com/trending/)
+> [HelloGitHub](https://github.com/xueweihan/HelloGitHub)
+> [阮一峰](https://github.com/ruanyf/weekly)
+
+## Github 资源搜索技巧
+- 找百科：awesome xxx(vue)
+- 找例子：xxx(vue) sample
+- 找空项目架子：xxx start / xxx boilerplate
+- 找教程：xxx tutorial
+
+
 ## git 基础指令
 
 
