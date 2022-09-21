@@ -1,11 +1,13 @@
 ---
-title: git学习
+title: 指令学习
 sidebar: auto
 ---
 
 ## 找项目，扩展视野
 > [Github trending](https://github.com/trending/)
+
 > [HelloGitHub](https://github.com/xueweihan/HelloGitHub)
+
 > [阮一峰](https://github.com/ruanyf/weekly)
 
 ## Github 资源搜索技巧
@@ -68,4 +70,13 @@ ssh-keygen -t rsa -C 1269894219@qq.com
 ssh -T git@github.com
 ```
 
-### 待补充
+## `npm` 和 `yarn` 指令对应
+```js
+npm install  => yarn install
+npm install --save [package] => yarn add [package]
+npm install --save-dev [package] => yarn add [package] --dev
+npm install --global [package] => yarn global add [package]
+npm uninstall --save [package] => yarn remove [package]
+npm uninstall --save-dev [package] => yarn remove [package]
+```
+
