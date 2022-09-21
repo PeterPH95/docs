@@ -19,6 +19,18 @@ git status //查看文件跟踪情况
 git commit -m"feat: about" //提交修改
 git config -l //查看配置项
 ```
+
+### 远程`git clone`仓库
+```js
+git clone ---
+cd /docs
+/* 在cmd环境中安装依赖 */
+yarn
+
+/* 公司电脑 yarn deploy 时出错, 修改了一下配置 */
+git config --global http.sslVerify "false"
+```
+
 ### 这是评论组件 Vssue 的展示
 <Vssue :options="{ locale: 'zh' }"/>
 
