@@ -21,7 +21,7 @@ git config --global http.sslVerify "false"
 ```git
 git pull
 ```
-### github 检测修改
+### `git`检测修改
 > 我来监测github跟踪，显示当前修改时间，通过以下代码查看和提交
 ```git
 git status //查看文件跟踪情况
@@ -36,7 +36,7 @@ git commit -m"信息说明"
 git push
 ```
 
-### git 查看账户，修改账户，多终端配置
+### `git` 查看账户，修改账户，多终端配置
 > [参考](https://blog.csdn.net/helloasimo/article/details/123778112?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166374032816781432996870%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=166374032816781432996870&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-123778112-null-null.142^v48^pc_rank_34_queryrelevant25,201^v3^control_1&utm_term=git%40github.com%3A%20Permission%20denied%20%28publickey%29.&spm=1018.2226.3001.4187)
 
 ```git

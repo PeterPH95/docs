@@ -2,7 +2,7 @@ module.exports = [//导航栏配置
 { text: 'Home', link: '/' },
 { text: 'About', link: '/about' },
 { text: 'Guide', link: '/guide/' },
-{ text: 'git', link: '/git/'},
+{ text: 'Git', link: '/git/'},
 {//下拉列表式的导航栏
   text: 'Languages',
   ariaLabel: 'Language Menu',
