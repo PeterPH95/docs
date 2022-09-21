@@ -17,12 +17,23 @@ yarn
 git config --global http.sslVerify "false"
 ```
 
+### `git`拉取更新
+```git
+git pull
+```
 ### github 检测修改
 > 我来监测github跟踪，显示当前修改时间，通过以下代码查看和提交
 ```git
 git status //查看文件跟踪情况
 git commit -m"feat: about" //提交修改
 git config -l //查看配置项
+```
+
+### `git`提交代码
+```
+git add .
+git commit -m"信息说明"
+git push
 ```
 
 ### git 查看账户，修改账户，多终端配置
