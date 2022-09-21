@@ -42,8 +42,8 @@ git push
 ```git
 // 首先，确定自己的账户邮箱是否正确
 git config --global --list
-git config --global user.name “PeterPH95”
-git config --global user.email “1269894219@qq.com”
+git config --global user.name 'PeterPH95'
+git config --global user.email '1269894219@qq.com'
 
 // 其次，在本地生成 SSH 密钥，一路回车
 ssh-keygen -t rsa -C 1269894219@qq.com
