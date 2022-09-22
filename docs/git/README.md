@@ -4,10 +4,8 @@ sidebar: auto
 ---
 
 ## 找项目，扩展视野
-> [Github trending](https://github.com/trending/)
-
-> [HelloGitHub](https://github.com/521xueweihan/HelloGitHub)
-
+> [Github trending](https://github.com/trending/)<br/>
+> [HelloGitHub](https://github.com/521xueweihan/HelloGitHub)<br/>
 > [阮一峰](https://github.com/ruanyf/weekly)
 
 ## Github 资源搜索技巧
