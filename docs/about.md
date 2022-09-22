@@ -1,4 +1,5 @@
 ---
+title: 持续学习，持续进步
 sidebar: auto
 ---
 
@@ -15,6 +16,3 @@ sidebar: auto
 
 ### 这是评论组件 Vssue 的展示
 <Vssue :options="{ locale: 'zh' }"/>
-
-### 侧边栏练习
-
