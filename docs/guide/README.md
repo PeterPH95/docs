@@ -3,15 +3,6 @@ title: 我的第一个页面练习
 sidebar: auto
 ---
 
-## 关于vuepress无法热更新的问题
-> 在根目录的`package.json`中配置如下
-```js
-"scripts": {
-    "dev": "vuepress dev docs --temp .temp",
-    "build": "vuepress build docs"
-  }
-```
-
 ## 将进酒
 <div style="
 padding: 5px 0;
@@ -35,5 +26,3 @@ color: #fff">
 <p>主人何为言少钱，径须沽取对君酌。</p>
 <p>五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。</p>
 </div>
-
-### 这是一个三级标题

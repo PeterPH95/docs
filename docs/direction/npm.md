@@ -2,7 +2,7 @@
 title: 一些指令
 sidebar: auto
 ---
-# npm 和 yarn 一些操作指令
+## npm 和 yarn 一些操作指令
 
 ## `npm` 和 `yarn` 指令对应
 ```js
@@ -55,6 +55,15 @@ yarn config set registry https://registry.npmmirror.com
 yarn config set registry https://registry.yarnpkg.com
 // 删除注册表
 yarn config delete registry
+```
+
+## 关于vuepress无法热更新的问题
+> 在根目录的`package.json`中配置如下
+```js
+"scripts": {
+    "dev": "vuepress dev docs --temp .temp",
+    "build": "vuepress build docs"
+  }
 ```
 
 ## `clone` 的项目版本兼容问题排坑
