@@ -97,3 +97,9 @@ nvm use [version] [arch] ：使用制定版本node。可指定32/64位。需在 
 nvm root [path] ：设置存储不同版本node的目录。如果未设置，默认使用当前目录。
 nvm version ：显示nvm版本。version可简化为v。
 ```
+
+### 报缺少`Python`环境的错,用`cnpm`解决
+```
+/** 如：import sys; print "%s.%s.%s" % sys.version_info[:3]; */
+cnpm i
+```
