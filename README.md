@@ -1,18 +1,47 @@
-<!-- ---
-home: true
-# heroImage: /hero.png
-heroText: Hero 标题
-tagline: Hero 副标题
-actionText: 快速上手 →
-actionLink: /zh/guide/
-features:
-- title: 简洁至上
-  details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-- title: Vue驱动
-  details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
-- title: 高性能
-  details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
-footer: MIT Licensed | Copyright © 2018-present Evan You
---- -->
-
 # Hello VuePress
+> 基于Vuepress搭建个人站点
+
+## Project setup
+```
+# 下载本地
+git clone https://github.com/PeterPH95/docs.git
+cd /docs
+
+# 安装依赖
+yarn
+
+# 本地启动项目
+yarn docs:dev
+
+# 打包构建
+yarn docs:build
+
+# 部署到 github.io
+yarn deploy
+```
+
+## 目录结构 [VuePress官方](https://www.vuepress.cn/guide/directory-structure.html)
+```
+.
+├── docs
+│   ├── .vuepress (可选的)
+│   │   ├── components (可选的)
+│   │   ├── theme (可选的)
+│   │   │   └── Layout.vue               // 主题布局，可自定义
+│   │   ├── public (可选的)
+│   │   ├── styles (可选的)
+│   │   │   ├── index.styl
+│   │   │   └── palette.styl
+│   │   ├── templates (可选的, 谨慎配置)
+│   │   │   ├── dev.html
+│   │   │   └── ssr.html
+│   │   ├── config.js (可选的)             // 配置文件
+│   │   └── enhanceApp.js (可选的)
+│   │ 
+│   ├── README.md                         // 首页
+│   ├── guide
+│   │   └── README.md                     // 自己的markdone文件
+│   └── config.md
+│ 
+└── package.json
+```

@@ -6,7 +6,7 @@ sidebar: auto
 ## 找项目，扩展视野
 > [Github trending](https://github.com/trending/)
 
-> [HelloGitHub](https://github.com/xueweihan/HelloGitHub)
+> [HelloGitHub](https://github.com/521xueweihan/HelloGitHub)
 
 > [阮一峰](https://github.com/ruanyf/weekly)
 
