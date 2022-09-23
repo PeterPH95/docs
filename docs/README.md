@@ -38,10 +38,10 @@ resolve: {
 ```
 
 ### require与import的区别
-- 1，require是CommonJS规范的模块化语法，import是ECMAScript 6规范的模块化语法；
-- 2，require是运行时加载，import是编译时加载；
-- 3，require可以写在代码的任意位置，import只能写在文件的最顶端且不可在条件语句或函数作用域中使用；
-- 4，require通过module.exports导出的值就不能再变化，import通过export导出的值可以改变；
+- 1.require是CommonJS规范的模块化语法，import是ECMAScript 6规范的模块化语法；
+- 2.require是运行时加载，import是编译时加载；
+- 3.require可以写在代码的任意位置，import只能写在文件的最顶端且不可在条件语句或函数作用域中使用；
+- 4.require通过module.exports导出的值就不能再变化，import通过export导出的值可以改变；
 
 ```js
 // m1.js
