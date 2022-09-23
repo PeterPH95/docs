@@ -18,8 +18,14 @@ git config --global http.sslVerify "false"
 ```
 
 ### `git`拉取更新
-```git
+```
 git pull
+//文件冲突 
+CONFLICT (modify/delete): docs/git/README.md
+admin@PC-3d4bfe MINGW64 ~/Desktop/docs (main|MERGING)
+//删除文件 docs/git/README.md
+git rm docs/git/README.md
+git committed -m"冲突解决"
 ```
 ### `git`检测修改
 > 我来监测github跟踪，显示当前修改时间，通过以下代码查看和提交

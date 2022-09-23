@@ -24,3 +24,96 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 sidebar: auto
 ---
 ```
+
+### vue2 中设置别名 @ 的方式
+```js{6}
+// src/build/webpack.base.conf.js 中进行配置
+resolve: {
+    extensions: ['.js', '.vue', '.json'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': resolve('src'),
+    }
+  },
+```
+
+### require与import的区别
+- 1，require是CommonJS规范的模块化语法，import是ECMAScript 6规范的模块化语法；
+- 2，require是运行时加载，import是编译时加载；
+- 3，require可以写在代码的任意位置，import只能写在文件的最顶端且不可在条件语句或函数作用域中使用；
+- 4，require通过module.exports导出的值就不能再变化，import通过export导出的值可以改变；
+
+```js
+// m1.js
+export var foo = 'bar';
+setTimeout(() => foo = 'baz', 500);
+// m2.js
+import {foo} from './m1.js';
+console.log(foo); //bar
+setTimeout(() => console.log(foo), 500); //baz
+```
+### ! 转换规则
+- !会将后面的数据先转成布尔值，然后取反。
+```js
+var a; //a = undefined
+var r = !!a; 
+console.log(r) //false
+
+!!{} // true
+!!undefined // false
+!!null // false
+!!NaN //false
+```
+
+### == 的隐式类型转换
+- 类型相同
+  - 基本类型，直接比较值
+  - 引用类型比较指针
+- 类型不同，尝试转成number类型，
+  - 先调用valueOf()转成number
+  - 不行就再用toString()方法转成string
+- null、NaN、undefined单独一套规则
+
+```js
+//请听题
+console.log(new String('abc') == true)//问题1
+console.log({} == true)//问题2
+console.log([] == ![])//问题3
+
+//问题1：
+console.log(new String('abc') == true)
+//step1:右侧转成数字1,变成：
+new String('abc')==1
+//step2 new String('abc').valueOf()不是数字也不是字符串，再调用toString()
+'abc' == 1
+//step3:字符串转数字
+NaN == 1 //false,NaN和任何类型比较都为false
+
+//问题2：
+console.log({}==true)
+//step1:右侧转成数字
+{} == 1
+//step2 {}.valueOf()不是数字也不是字符串，再调用toString()
+'[object Object]' ==1 
+//step3:字符串转数字
+NaN == 1 //false,NaN和任何类型比较都为false
+
+//问题3:
+console.log([]==![])
+//step1:!优先级比==高，先转右边,[]是对象类型，转成布尔值为true,!true就是false
+[]==false
+//step2:右侧转成数字为0
+[]==0
+//step3:左侧是一个对象，valueOf()转出来不是字符也不是字符串，调用toString()，得到空字符串
+'' == 0
+//step4:字符串转成数字
+0 == 0 //true
+
+//null、NaN、undefined
+console.log(NaN==NaN) //false
+console.log(undefined==null) //true
+console.log(null==null) //true
+console.log(null==undefined) //true
+undefined == undefined //true
+```
+
