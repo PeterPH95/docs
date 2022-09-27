@@ -10,7 +10,9 @@ module.exports = [//导航栏配置
         text: '指令',
         items: [{ text: 'Git', link: '/direction/git.md' },
                 { text: 'Npm', link: '/direction/npm.md' },
-                { text: 'Plugin', link: '/direction/plug.md'},]
+                { text: 'Plugin', link: '/direction/plug.md'},
+                { text: 'RegExp', link: '/direction/regExp.md'},]
+              
       },
       {
         text: '扩展',

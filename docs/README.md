@@ -52,17 +52,33 @@ import {foo} from './m1.js';
 console.log(foo); //bar
 setTimeout(() => console.log(foo), 500); //baz
 ```
+
 ### ! 转换规则
-- !会将后面的数据先转成布尔值，然后取反。
-```js
+> !会将后面的数据先转成布尔值，然后取反。
+```js{6}
 var a; //a = undefined
 var r = !!a; 
 console.log(r) //false
 
 !!{} // true
+!![] // true
 !!undefined // false
 !!null // false
 !!NaN //false
+```
+
+### js中操作符 ~~ 和 !!
+> 利用符号进行的类型转换,转换成数字类型
+```js
+~~undefined //0
+~~null //0
+~~!undefined //1
+~~!null //1
+
+~~true //1
+~~false //0
+~~"" //0
+~~[] //0
 ```
 
 ### == 的隐式类型转换
@@ -73,6 +89,7 @@ console.log(r) //false
   - 先调用valueOf()转成number
   - 不行就再用toString()方法转成string
 - null、NaN、undefined单独一套规则
+  - undefined和null与任何有有意义的值比较都是false，但null == undefined // true 
 
 ```js
 //请听题
@@ -116,4 +133,3 @@ console.log(null==null) //true
 console.log(null==undefined) //true
 undefined == undefined //true
 ```
-

@@ -42,6 +42,7 @@ yarn deploy
 │   ├── guide
 │   │   └── README.md                     // 自己的markdone文件
 │   └── config.md
-│ 
+│
+├── deploy.sh                             // 部署到github.io的脚本文件
 └── package.json
 ```
