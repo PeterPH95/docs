@@ -81,7 +81,7 @@ console.log(r) //false
 ~~[] //0
 ```
 
-### == 的隐式类型转换
+### == + 的隐式类型转换
 - 类型相同
   - 基本类型，直接比较值
   - 引用类型比较指针
@@ -90,6 +90,7 @@ console.log(r) //false
   - 不行就再用toString()方法转成string
 - null、NaN、undefined单独一套规则
   - undefined和null与任何有有意义的值比较都是false，但null == undefined // true 
+- 补充：+[] 隐式转换为Number 0
 
 ```js
 //请听题
@@ -132,4 +133,38 @@ console.log(undefined==null) //true
 console.log(null==null) //true
 console.log(null==undefined) //true
 undefined == undefined //true
+```
+
+
+### typeof
+:::warning
+typeof返回的类型:number、string、boolean、undefined、function、object共6种。后ES6新又增 symbol
+注意：
+- 其中 Array 与 null 返回的都是 object
+- function(){} 与 class{}(类的本质是函数，是构造函数的另一种写法) 返回的都是 function
+:::
+
+
+### 原型链继承问题
+```js
+function F(){};
+Object.prototype.a = function(){console.log('a')};
+Function.prototype.b = function(){console.log('b')};
+var f = new F();
+//f.a()?
+//f.b()?
+
+// F instanceof Function ---> true
+// f instanceof Function ---> false
+// f instanceof Object ---> true
+
+/*
+f.__proto__ === [f 构造函数的].prototype === F.prototype
+F.prototype.__proto__ === [F.prototype 构造函数的].prototype === Object.prototype ---> 所以 a 可以通过 f.a()访问
+f.constructor === F
+F.__proto__ === [F 构造函数的].prototype === Function.prototype ---> 所以 b 能通过f.constructor.b()访问
+Function.prototype.__proto__ === [Function.prototype 构造函数的].prototype === Object.prototype ---> 所以 a 可以通过 f.constructor.a()访问
+
+综上：f 能取到 a 取不到 b; F 能取到 a,b
+*/
 ```
