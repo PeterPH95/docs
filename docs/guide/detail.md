@@ -1,8 +1,9 @@
 ---
-sidebar: auto
 title: 补充
+sidebar: auto
 ---
 
+## 查漏补缺
 
 ### vue2 中设置别名 @ 的方式
 ```js{6}
