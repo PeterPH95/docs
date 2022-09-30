@@ -33,8 +33,9 @@ console.log(foo); //bar
 setTimeout(() => console.log(foo), 500); //baz
 ```
 
-### ! 转换规则
+### js中操作符! ~~ 和 !!
 > !会将后面的数据先转成布尔值，然后取反。
+> 利用符号进行的类型转换,转换成数字类型
 ```js{6}
 var a; //a = undefined
 var r = !!a; 
@@ -42,14 +43,11 @@ console.log(r) //false
 
 !!{} // true
 !![] // true
+!!'' //false
 !!undefined // false
 !!null // false
 !!NaN //false
-```
 
-### js中操作符 ~~ 和 !!
-> 利用符号进行的类型转换,转换成数字类型
-```js
 ~~undefined //0
 ~~null //0
 ~~!undefined //1
@@ -69,7 +67,8 @@ console.log(r) //false
   - 先调用valueOf()转成number
   - 不行就再用toString()方法转成string
 - null、NaN、undefined单独一套规则
-  - undefined和null与任何有有意义的值比较都是false，但null == undefined // true 
+  - undefined和null与任何有有意义的值比较都是false，
+  - 但null == undefined // true (undefined值是通过null派生出来的，== 时它会自动转化为null，所以返回true。)
 - 补充：+[] 隐式转换为Number 0
 
 ```js
@@ -147,4 +146,31 @@ Function.prototype.__proto__ === [Function.prototype 构造函数的].prototype 
 
 综上：f 能取到 a 取不到 b; F 能取到 a,b
 */
+```
+
+
+### 连等 var a=b=1 声明问题
+> 语句 var a=b=1 是语句 b = 1 和 var a = b 的简写， b 成为一个全局变量（**没有var前缀**）
+```js{3-5}
+function fn(){
+   var a= b = 1;
+ //等于var a = b ,b = 1
+ //不加var b就是全局变量了(window.b=1)，可以直接访问
+ //var a是局部变量，在fn里面，外面访问不到
+} 
+fn();   
+console.log(b);//windows全局作用域下找到window.b=1
+console.log(a);//a在fn里面的作用域，外面访问不了，报错
+```
+
+
+### this 指向问题?
+> this指向取决于该箭头函数**同级作用域**的this指向，又由于**对象不能形成自己的作用域**，因此其作用域为全局作用域，this指向Window对象
+```js
+var o = {
+    sayHi:()=>{
+      console.log(this);
+    }
+}
+o.sayHi();
 ```
