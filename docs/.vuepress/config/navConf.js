@@ -1,16 +1,26 @@
 module.exports = [//导航栏配置
   { text: 'Home', link: '/' },
   { text: 'About', link: '/about' },
-  { text: 'Guide', link: '/guide/' },
+  { 
+    text: 'Guide', 
+    items: [
+      { text: 'AbountMe',link: '/guide/' },
+      { text: 'More',link: '/guide/detail.md' },
+      { text: 'CSS',link: '/guide/css.md' },
+    ]
+  },
   {
     text: 'More',
     // ariaLabel: '指令',
     items: [
       {
         text: '指令',
-        items: [{ text: 'Git', link: '/direction/git.md' },
-                { text: 'Npm', link: '/direction/npm.md' },
-                { text: 'Plugin', link: '/direction/plug.md'},]
+        items: [
+          { text: 'Git', link: '/direction/git.md' },
+          { text: 'Npm', link: '/direction/npm.md' },
+          { text: 'Plugin', link: '/direction/plug.md'},
+          { text: 'RegExp', link: '/direction/regExp.md'},
+        ]
       },
       {
         text: '扩展',
