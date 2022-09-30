@@ -6,6 +6,7 @@ module.exports = [//导航栏配置
     items: [
       { text: 'AbountMe',link: '/guide/' },
       { text: 'More',link: '/guide/detail.md' },
+      { text: 'CSS',link: '/guide/css.md' },
     ]
   },
   {
