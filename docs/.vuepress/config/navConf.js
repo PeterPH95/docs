@@ -28,6 +28,12 @@ module.exports = [//导航栏配置
       }
     ],
   },
+  {// 一些小游戏
+    text: '🐱‍💻games',
+    items: [
+      {text: 'snake', link: '/games/snake.html'},
+    ]
+  },
   {//下拉列表式的导航栏
     text: 'Languages',
     ariaLabel: 'Language Menu',

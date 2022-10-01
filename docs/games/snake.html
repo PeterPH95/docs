@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🐍贪吃蛇🐍</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    .root {
+      border: 1px solid #ddd;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+
+    .item {
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+    }
+
+    .player {
+      background-color: #444;
+    }
+
+    .food {
+      background-color: tomato;
+      animation: fade 800ms ease-in-out infinite;
+    }
+    /* 动画闪烁效果 */
+    @keyframes fade {
+      from {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="root"></div>
+  <script>
+    let size = 20,
+      n = 20;
+    let table = [];
+    let player = [[1, 1]];
+    let root = document.querySelector(".root");
+
+    // 画板初始化
+    const init = function () {
+      //1. 制作画板
+      for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+          // const isEat = Math.random() > 0.95 ? true : false;
+          // if (i === 1 && j === 1 && isEat) {
+          //   continue;//${isEat ? "food" : ""}
+          // }
+          table.push(
+            `<div class = "item " data-v=_${i}-${j} 
+          style="width:${size}px;height:${size}px"}></div>`
+          );
+        }
+      }
+      root.style.width = `${size * n}px`;
+      root.style.height = `${size * n}px`;
+      root.innerHTML = table.join("");//表格渲染
+    }
+
+    // 更新食物
+    const newFood = function () {
+      //生成1-20的随机数，构成坐标(x,y)
+      while (true) {
+        const x = Math.floor(Math.random()*n);
+        const y = Math.floor(Math.random()*n);
+        // 判断是否在蛇身上
+        if (JSON.stringify(player).indexOf('['+x+','+y+']') !== -1) {
+          continue;
+        }
+        const food = x + '-' + y;
+        // console.log(x,y);
+        // 获取 Dom
+        let foodDom = document.querySelector(`[data-v=_${food}]`);
+        // console.log(foodDom);
+        // 给食物上色
+        foodDom.classList.add("food");
+        break;
+      }
+    }
+
+    // 渲染蛇身
+    const update = function () {
+      //移动时清除掉原来蛇身的样式
+      document.querySelectorAll(".player").forEach((item) => item.classList.remove("player"));
+      // console.log(player);
+      player.forEach((item) => {
+        const local = item.join("-"); //坐标拼接
+        document.querySelector(`[data-v=_${local}]`).classList.add("player"); //给蛇身重新上色
+      });
+    };
+
+    // 方向控制
+    let key = ""; // 获得键位
+    let upDown = ['w', 's'];
+    let leftRight = ['a', 'd'];
+    document.addEventListener("keydown", (e) => {
+      // 在上下跑的时候，方向只能改变为左右，不能掉头
+      if (upDown.includes(e.key) && !upDown.includes(key)) {
+        key = e.key;
+      }
+      // 在左右跑的时候，方向只能改变为上下，不能掉头
+      if (leftRight.includes(e.key) && !leftRight.includes(key)) {
+        key = e.key;
+      }
+    });
+
+    //贪吃蛇自动运动
+    const time = setInterval(() => {
+      if (key) {
+        // 获取当前蛇身的全体坐标（去掉尾巴），只有头部时为空数组，
+        // slice方法不改变原数组，但是数组里面还是数组，所以拷贝的是地址，原数组player[0][0]改变它也会变
+        const tmp1 = player.slice(0, player.length - 1);
+        // console.log('tmp1',tmp1);
+        // 拷贝一下消除对原数组的影响
+        const tmp = JSON.parse(JSON.stringify(tmp1));
+        // console.log('tmp',tmp);
+
+        // player[ [行坐标,列坐标 ] ] ,根据键位更新蛇头坐标
+        switch (key) {
+          case "w":
+            player[0][0] -= 1;
+            break;
+          case "s":
+            player[0][0] += 1;
+            break;
+          case "a":
+            player[0][1] -= 1;
+            break;
+          case "d":
+            player[0][1] += 1;
+            break;
+        }
+
+        const newHead = player[0].join("-"); //新蛇头坐标
+        // 获取新蛇头的 DOM
+        const judge = document.querySelector(`div[data-v=_${newHead}]`);
+        // 判断是否撞到墙和蛇身JSON.stringify(tmp).includes(JSON.stringify(player[0]))也可
+        if (!judge || judge.className.indexOf('player') !== -1) {
+          //越界直接结束
+          clearInterval(time);
+          alert("Game Over!"); //结束
+        } else {
+          //未撞墙则更新(除去蛇头的，蛇头已经更新在player[0]中)蛇身的坐标
+          for (let i = 1; i < player.length; i++) {
+            player[i] = tmp[i - 1];
+          }
+          //如果这一格是个食物,那么就加入到player里面
+          if (judge.className.indexOf("food") >= 0) {
+            judge.classList.remove("food");
+            newFood();
+            player.unshift([...player[0]]);//蛇身增长
+          }
+          update(); //渲染节点
+        }
+      }
+    }, 300);
+
+    // 游戏初始化
+    init(); // 重新开始
+    newFood(); // 生成一个吃的
+    update(); // 执行函数,首次渲染的头结点在此
+  </script>
+</body>
+
+</html>
