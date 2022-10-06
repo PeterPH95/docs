@@ -34,10 +34,10 @@ setTimeout(() => console.log(foo), 500); //baz
 ```
 
 ### js中操作符! ~~ 和 !!
-> !会将后面的数据先转成布尔值，然后取反。<br/>
-> 利用符号进行的类型转换,转换成数字类型<br/>
-> ~~ 取整的方式比`Math.floor()`方法更快，正数向下取整，负数向上取整
-```js{6,-5}
+> - !会将后面的数据先转成布尔值，然后取反。<br/>
+> - 利用符号进行的类型转换,转换成数字类型<br/>
+> - ~~ 取整的方式比`Math.floor()`方法更快，正数向下取整，负数向上取整
+```js{6}
 var a; //a = undefined
 var r = !!a; 
 console.log(r) //false
@@ -172,12 +172,19 @@ console.log(a);//a在fn里面的作用域，外面访问不了，报错
 
 
 ### this 指向问题?
-> this指向取决于该箭头函数**同级作用域**的this指向，又由于**对象不能形成自己的作用域**，因此其作用域为全局作用域，this指向Window对象
+> - 对于箭头函数：this指向取决于该箭头函数**同级作用域**的this指向，又由于**对象不能形成自己的作用域**，因此其作用域为全局作用域，箭头函数的this初始绑定Window对象
+> - 对于普通函数：this绑定了它的调用者
 ```js
 var o = {
     sayHi:()=>{
-      console.log(this);
+      console.log(this);// window
     }
 }
 o.sayHi();
+var o2 = {
+    sayHi:function(){
+      console.log(this);// {sayHi:f}
+    }
+}
+o2.sayHi();
 ```
