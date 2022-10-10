@@ -117,8 +117,17 @@ console.log([]==![])
 console.log(NaN==NaN) //false
 console.log(undefined==null) //true
 console.log(null==null) //true
-console.log(null==undefined) //true
 undefined == undefined //true
+```
+
+
+### valueOf() 和 toString()的特殊调用
+```js
+/**
+ * []重写了toString()方法，默认调用join()，{}未重写toString()返回数据类型
+ */
+console.log([].valueOf() , [].toString()) // [] ,  ''
+console.lgo({}.valueOf(). {}.toString()) // {}, [object Object] 
 ```
 
 
