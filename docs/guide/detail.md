@@ -33,10 +33,10 @@ console.log(foo); //bar
 setTimeout(() => console.log(foo), 500); //baz
 ```
 
-### js 中操作符 `!` `~~` 和 `!!`
-- ! 会将后面的数据先转成布尔值，然后取反；<br/>
-- ~~ 利用符号进行的类型转换,转换成数字类型；<br/>
-- ~~ 取整的方式比`Math.floor()`方法更快，正数向下取整，负数向上取整
+### js 中操作符 `!` `~~` 和 `!!`[参考](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Logical_NOT#double_not_!!)
+- ! 会将后面的数据先转成布尔值，然后取反；
+- ~~ 利用符号进行的类型转换，转换成数字类型；
+- ~~ 取整的方式比`Math.floor()`方法更快，正数向下取整，负数向上取整；
 ```js{5,6}
 var a; //a = undefined
 var r = !!a; 
@@ -126,8 +126,8 @@ undefined == undefined //true
 /**
  * []重写了toString()方法，默认调用join()，{}未重写toString()返回数据类型
  */
-console.log([].valueOf() , [].toString()) // [] ,  ''
-console.lgo({}.valueOf(). {}.toString()) // {}, [object Object] 
+console.log([].valueOf(), [].toString()) // [] ,  ''
+console.log({}.valueOf(), {}.toString()) // {}, [object Object] 
 ```
 
 
