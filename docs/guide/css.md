@@ -25,3 +25,25 @@ sidebar: auto
 - overflow的值不能为visible
 - display的值为table-cell, table-caption, inline-block中的任何一个
 - position的值不为relative和static
+
+
+### 父子盒子的宽度计算
+- 当子盒子不设置width，或者设置width为auto时，子盒子的宽度=父盒子宽度-子盒子左右margin值-子盒子左右padding值
+```CSS
+/** 计算子盒子的宽度width? (190px)*/
+.father {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+}
+.son {
+  margin:0  -5px;
+  padding:0  10px;
+  height:100px;
+  background-color: red;
+}
+
+<div class="father">
+  <div class="son"></div>
+</div>
+```

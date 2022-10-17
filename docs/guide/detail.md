@@ -137,6 +137,7 @@ typeof返回的类型:number、string、boolean、undefined、function、object�
 注意：
 - 其中 Array 与 null 返回的都是 object
 - function(){} 与 class{}(类的本质是函数，是构造函数的另一种写法) 返回的都是 function
+- `typeof NaN // 'number'`
 :::
 
 
