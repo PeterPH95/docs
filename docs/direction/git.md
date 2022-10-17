@@ -50,6 +50,8 @@ git push
 git checkout HEAD xxx.md
 // 查看修改日志
 git log
+// 退出日志
+q // 按住
 ```
 
 ### `git` 查看账户，修改账户，多终端配置
