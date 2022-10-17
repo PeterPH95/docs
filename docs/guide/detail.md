@@ -131,7 +131,7 @@ console.log({}.valueOf(), {}.toString()) // {}, [object Object]
 ```
 
 
-### typeof
+### typeof 
 :::warning
 typeof返回的类型:number、string、boolean、undefined、function、object共6种。后ES6新又增 symbol
 注意：
@@ -139,6 +139,12 @@ typeof返回的类型:number、string、boolean、undefined、function、object�
 - function(){} 与 class{}(类的本质是函数，是构造函数的另一种写法) 返回的都是 function
 - `typeof NaN // 'number'`
 :::
+```js
+// 判断数组类型的方式
+[] instanceof Array // true
+Array.isArray([]) // true
+[].constructor.name // 'Array'
+```
 
 
 ### 原型链继承问题
