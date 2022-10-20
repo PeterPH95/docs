@@ -70,11 +70,12 @@ console.log(r) //false
 - 类型相同
   - 基本类型，直接比较值
   - 引用类型比较指针
-- 类型不同，尝试转成number类型，
+- 类型不同，尝试转成number类型
   - 先调用valueOf()转成number
   - 不行就再用toString()方法转成string
 - null、NaN、undefined单独一套规则
-  - undefined和null与任何有有意义的值比较都是false，
+  - undefined和null与任何有有意义的值比较都是false
+    - undefined/null == 0/false/'' ===> false（不会再进行转换）
   - 但null == undefined // true (undefined值是通过null派生出来的，== 时它会自动转化为null，所以返回true。)
 - 补充：+[] 隐式转换为Number 0
 
