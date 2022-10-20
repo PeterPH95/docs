@@ -49,14 +49,17 @@
 // test(2);
 // console.log(global.result);
 
-let num = 10000000
-let sum = 0
-function res(num) {
-  for (let i = 0; i < num; i++) {
-    if (i.toString().indexOf("4") !== -1) {
-      sum++
-    }
-  }
-}
-res(num)
-console.log(num-sum)
+// let num = 10000000
+// let sum = 0
+// function res(num) {
+//   for (let i = 0; i < num; i++) {
+//     if (i.toString().indexOf("4") !== -1) {
+//       sum++
+//     }
+//   }
+// }
+// res(num)
+// console.log(num-sum)
+
+function a(){console.log(1)}
+var a
