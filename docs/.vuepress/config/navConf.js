@@ -28,6 +28,12 @@ module.exports = [//导航栏配置
       }
     ],
   },
+  {
+    text: 'base',
+    items: [
+      {text: 'sql', link: '/base/sql.md'}
+    ]
+  },
   {// 一些小游戏
     text: '🐱‍💻games',
     items: [
