@@ -29,13 +29,13 @@ module.exports = [//导航栏配置
     ],
   },
   {
-    text: 'base',
+    text: 'Base',
     items: [
       {text: 'sql', link: '/base/sql.md'}
     ]
   },
   {// 一些小游戏
-    text: '🐱‍💻games',
+    text: '🐱‍💻Games',
     items: [
       {text: 'snake', link: '/games/snake.html'},
     ]
