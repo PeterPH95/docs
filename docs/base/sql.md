@@ -1,11 +1,11 @@
 ---
 title: 数据库基础操作
-sibar: auto
+sidebar: auto
 ---
 
 
 ## 数据库关键词顺序
-- sql中关键字出现的顺序是：`select/from/where/group by/having/order by/limit`
+- sql中关键字出现的顺序是：`select/from/wshere/group by/having/order by/limit`
 - [参考](https://blog.csdn.net/qq_26442553/article/details/79467243)
 
 ```sql
