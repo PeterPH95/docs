@@ -7,6 +7,7 @@ module.exports = [//导航栏配置
       { text: 'AbountMe',link: '/guide/' },
       { text: 'More',link: '/guide/detail.md' },
       { text: 'CSS',link: '/guide/css.md' },
+      { text: 'Vue',link: '/guide/vue.md' },
     ]
   },
   {
@@ -31,7 +32,7 @@ module.exports = [//导航栏配置
   {
     text: 'Base',
     items: [
-      {text: 'sql', link: '/base/sql.md'}
+      {text: 'SQL', link: '/base/sql.md'}
     ]
   },
   {// 一些小游戏

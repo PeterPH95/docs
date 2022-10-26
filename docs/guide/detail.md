@@ -3,17 +3,8 @@ title: 补充
 sidebar: auto
 ---
 
-### vue2 中设置别名 `@` 的方式
-```js{6}
-// src/build/webpack.base.conf.js 中进行配置
-resolve: {
-    extensions: ['.js', '.vue', '.json'],
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
-    }
-  },
-```
+## 查漏补缺
+
 
 ### `require`与`import`的区别
 - 1.require是CommonJS规范的模块化语法，import是ECMAScript 6规范的模块化语法；
