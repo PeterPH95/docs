@@ -61,5 +61,19 @@
 // res(num)
 // console.log(num-sum)
 
-function a(){console.log(1)}
-var a
+
+// 10.25 函数柯里化
+// var fn = function (a, b, c) {return a + b + c}
+// function curryIt(fn) {
+//     return function fun(a){
+//         // 原函数参数的个数为1时，直接执行
+//         if(fn.length === 1){
+//             return fn(a)
+//         }
+//         // 
+//         fn = fn.bind(this, a)
+//         return fun
+//     }
+// }
+
+// curryIt(fn)(1)(2)(3)

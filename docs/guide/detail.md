@@ -3,8 +3,6 @@ title: 补充
 sidebar: auto
 ---
 
-## 查漏补缺
-
 ### vue2 中设置别名 `@` 的方式
 ```js{6}
 // src/build/webpack.base.conf.js 中进行配置
@@ -75,8 +73,8 @@ console.log(r) //false
   - 不行就再用toString()方法转成string
 - null、NaN、undefined单独一套规则
   - undefined和null与任何有有意义的值比较都是false
-    - undefined/null == 0/false/'' ===> false（不会再进行转换）
-  - 但null == undefined // true (undefined值是通过null派生出来的，== 时它会自动转化为null，所以返回true。)
+    - `undefined/null == 0/false/''` ===> false（不会再进行转换）
+  - 但`null == undefined // true` (undefined值是通过null派生出来的，== 时它会自动转化为null，所以返回true。)
 - 补充：+[] 隐式转换为Number 0
 
 ```js

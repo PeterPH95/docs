@@ -25,7 +25,8 @@ LIMIT <limit_number>
 
 ### `SELECT`
 - `distinct`去重, `as`改名
-- 函数：`sum()`(求和),`substring()`(字符串字串),`*`(乘法),`max(price)`(最大值),`count(*)`(所有记录)/`count(列)`(列中非空记录)
+- 函数：`sum()`(求和),`max(price)`(最大值),`avg(price)`(均值),`*`(乘法)
+- `count(*)`(所有记录)/`count(列)`(列中非空记录),`substring()`(字符串字串)
 ```sql
 -- 去重
 select distinct university from user_profile
@@ -50,7 +51,33 @@ group by order_num
 
 
 ### `JOIN ... ON`
+- 内联结，多表联结
+```sql
+-- 方法一：将Customers和Orders联结一起
+select cust_name,order_num
+from Customers
+INNER JOIN Orders ON Orders.cust_id=Customers.cust_id
+order by cust_name,order_num;
 
+-- 方法二：使用where进行联结
+select cust_name,order_num
+from Customers,Orders
+where Customers.cust_id=Orders.cust_id
+order by cust_name,order_num;
+
+-- 三表联结查询
+select c.cust_name,os.order_num,sum(os.quantity*os.item_price) OrderTotal 
+from Orders o
+-- 联结表二 OrderItems
+join OrderItems os
+on os.order_num=o.order_num
+-- 联结表三 Customers
+join Customers c
+on c.cust_id=o.cust_id
+
+group by c.cust_name,os.order_num
+order by c.cust_name,os.order_num;
+```
 
 
 ### `WHERE`
@@ -89,6 +116,9 @@ select order_num
 from OrderItems
 group by order_num
 having sum(quantity) >= 100
+
+-- 多组分组，先基于性别后学校
+group by gender, university
 ```
 
 
@@ -131,9 +161,24 @@ SELECT * FROM table LIMIT 5
 -- 多表结合
 SELECT DISTINCT cust_id
 FROM Orders
+-- where和下一级的select的内容一致
 WHERE order_num IN (
     SELECT order_num
     FROM OrderItems
     WHERE item_price >= 10
 )
+
+-- 两表分属两列
+select
+  prod_name,
+  (
+    select
+      sum(quantity)
+    from
+      OrderItems b
+    where
+      a.prod_id = b.prod_id
+  ) as quant_sold
+from
+  Products a
 ```
