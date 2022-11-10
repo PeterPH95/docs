@@ -57,6 +57,15 @@ yarn config set registry https://registry.yarnpkg.com
 yarn config delete registry
 ```
 
+## 安装指定版本的`vue-cli`
+```js
+// 安装最新版
+npm uninstall -g @vue/cli
+// 安装指定版
+npm install -g @vue/cli@3.11.0
+yarn global add @vue/cli@3.11.0
+```
+
 ## 关于vuepress无法热更新的问题
 > 在根目录的`package.json`中配置如下
 ```js
