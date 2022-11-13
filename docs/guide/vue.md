@@ -57,7 +57,7 @@ deactivated(){
 
 
 ## 登录时获取登录的地理位置
-- [Node 代理解决跨域](https://blog.csdn.net/qq_46302247/article/details/123200329)
+- [Node 代理解决跨域](https://blog.csdn.net/qq_46302247/article/details/123200329)[官方文档](https://cli.vuejs.org/zh/config/#devserver-proxy)
 - [接口地址](http://myip.ipip.net/)
 ```js
 // vue.config.js配置
@@ -99,12 +99,6 @@ export const getAddr = (params) => {
 ```
 
 
-## 不同请求方式获取数据的方式
-- `GET`：参数通过`params:{name:'',page:4,limit:20}`对象传递，通过`url`中获取，需设置`param2Obj(url)`函数将字符串转换成对象
-  - 例如：`/api/user/getUser?name=&page=4&limit=20 `
-- `POST`：参数通过`data`对象传递，通过`JSON.parse(config.body)`获取
-
-
 ## 页面刷新的后果(白屏)
 - `Vue`实例会重走生命周期
 - `Vuex`会丢失数据，因为数据都在缓存中，未持久化
@@ -121,6 +115,19 @@ export const getAddr = (params) => {
   - 数据类别：图表和表格数据，根据登录信息返回确定的不同的**路由表**，模拟数据库的**增删改查**操作
 
 
+## 不同请求方式获取数据的方式
+- `GET`：参数通过`params:{name:'',page:4,limit:20}`对象传递，通过`url`中获取，需设置`param2Obj(url)`函数将字符串转换成对象
+  - 例如：`/api/user/getUser?name=&page=4&limit=20 `
+- `POST`：参数通过`data`对象传递，通过`JSON.parse(config.body)`获取
+
+
 ## `Token`在项目中的应用场景
 - 路由跳转：对未登录的无`token`的跳转行为进行拦截
 - 向后端请求数据：拒绝未授权的请求，通过请求拦截器将`token`设置在请求头的`config.headers['Authorization'] = token`中
+
+
+## `i18n`国际化
+:::tip
+适用场景：表格的表头信息，固定的按钮
+注意：如果是动态数据的话，一般是不适合国际化的；如果数据是写死的，就在数据源头将其替换为国际化写法即可
+:::

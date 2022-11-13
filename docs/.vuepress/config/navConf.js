@@ -4,10 +4,10 @@ module.exports = [//导航栏配置
   { 
     text: 'Guide', 
     items: [
-      { text: 'AbountMe',link: '/guide/' },
       { text: 'More',link: '/guide/detail.md' },
       { text: 'CSS',link: '/guide/css.md' },
       { text: 'Vue',link: '/guide/vue.md' },
+      { text: 'Deploy',link: '/guide/deploy.md' },
     ]
   },
   {
