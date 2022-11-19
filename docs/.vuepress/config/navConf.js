@@ -6,6 +6,7 @@ module.exports = [//导航栏配置
     items: [
       { text: 'More',link: '/guide/detail.md' },
       { text: 'CSS',link: '/guide/css.md' },
+      { text: 'TypeScript', link: '/guide/TypeScript.md' }
       { text: 'Vue',link: '/guide/vue.md' },
       { text: 'Deploy',link: '/guide/deploy.md' },
     ]
