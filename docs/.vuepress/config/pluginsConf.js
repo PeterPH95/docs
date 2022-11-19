@@ -39,4 +39,11 @@ module.exports = [
   [//back-to-top
     '@vuepress/back-to-top'
   ],
+  [// 页面滚动时自动激活侧边栏链接的插件 
+    '@vuepress/active-header-links',
+    {
+      sidebarLinkSelector: '.sidebar-link',
+      headerAnchorSelector: '.header-anchor'
+    }
+  ]
 ]

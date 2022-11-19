@@ -4,7 +4,7 @@ module.exports = [//导航栏配置
   { 
     text: 'Guide', 
     items: [
-      { text: 'More',link: '/guide/detail.md' },
+      { text: 'JavaScript',link: '/guide/JavaScript.md' },
       { text: 'CSS',link: '/guide/css.md' },
       { text: 'TypeScript', link: '/guide/TypeScript.md' },
       { text: 'Vue',link: '/guide/vue.md' },
@@ -42,13 +42,13 @@ module.exports = [//导航栏配置
       {text: 'snake', link: '/games/snake.html'},
     ]
   },
-  {//下拉列表式的导航栏
-    text: 'Languages',
-    ariaLabel: 'Language Menu',
-    items: [
-      { text: 'Chinese', link: '/language/chinese/' },
-      { text: 'Japanese', link: '/language/japanese/' }
-    ]
-  },
+  // {//下拉列表式的导航栏
+  //   text: 'Languages',
+  //   ariaLabel: 'Language Menu',
+  //   items: [
+  //     { text: 'Chinese', link: '/language/chinese/' },
+  //     { text: 'Japanese', link: '/language/japanese/' }
+  //   ]
+  // },
   { text: 'Github', link: 'https://github.com/PeterPH95/docs' },
 ]

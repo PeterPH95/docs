@@ -1,9 +1,10 @@
 ---
 title: 补充
+sidebarDepth: 4
 sidebar: auto
 ---
 
-## 查漏补缺
+## JavaScript
 
 
 ### `require`与`import`的区别

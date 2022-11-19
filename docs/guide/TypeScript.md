@@ -1,4 +1,10 @@
-## TypeScript [学习笔记](https://www.tslang.cn/docs/handbook/basic-types.html)
+---
+title: TypeScript
+sidebarDepth: 5
+sidebar: auto
+---
+
+# TypeScript [学习笔记](https://www.tslang.cn/docs/handbook/basic-types.html)
 
 ## 准备工作
 
@@ -234,13 +240,18 @@ if (code === Types.No) {
 
 #### 反向映射
 
-- 正向映射
+- 正向映射： key ---> value；反向映射：value ---> key
+- 注意❗：不会为**字符串**枚举成员生成反向映射
 
+```typescript
+enum Enum {
+   fall
+}
+let a = Enum.fall;
+console.log(a); // 0
+let nameOfA = Enum[a]; // a类似于索引，返回 key 的 string 类型
+console.log(nameOfA); // fall
 ```
-
-```
-
-
 
 ### never
 

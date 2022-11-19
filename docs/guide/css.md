@@ -1,5 +1,6 @@
 ---
 title: CSS
+sidebarDepth: 4
 sidebar: auto
 ---
 
