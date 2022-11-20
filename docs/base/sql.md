@@ -3,6 +3,7 @@ title: 数据库基础操作
 sidebar: auto
 ---
 
+# 数据库学习笔记
 
 ## 数据库关键词顺序
 - sql中关键字出现的顺序是：`select/from/wshere/group by/having/order by/limit`

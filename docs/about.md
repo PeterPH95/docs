@@ -30,5 +30,4 @@ color: #fff">
 <p>五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。</p>
 </div>
 
-### 评论组件 Vssue 的展示
-<Vssue :options="{ locale: 'zh' }"/>
+

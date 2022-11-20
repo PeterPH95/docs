@@ -1,6 +1,7 @@
 module.exports = [//导航栏配置
   { text: 'Home', link: '/' },
   { text: 'About', link: '/about' },
+  { text: 'Algorithm', link: '/algorithm/' },
   { 
     text: 'Guide', 
     items: [
@@ -12,22 +13,21 @@ module.exports = [//导航栏配置
     ]
   },
   {
-    text: 'More',
+    text: 'Tool',
     // ariaLabel: '指令',
     items: [
       {
         text: '指令',
         items: [
-          { text: 'Git', link: '/direction/git.md' },
-          { text: 'Npm', link: '/direction/npm.md' },
-          { text: 'Plugin', link: '/direction/plug.md'},
-          { text: 'RegExp', link: '/direction/regExp.md'},
+          { text: 'Git', link: '/tools/git.md' },
+          { text: 'Npm', link: '/tools/npm.md' },
+          { text: 'Plugin', link: '/tools/plug.md'},
+          { text: 'RegExp', link: '/tools/regExp.md'},
         ]
       },
-      {
-        text: '扩展',
-        items: [{ text: 'News', link: '/direction/news.md' }]
-      }
+      // {
+      //   text: '扩展', items: []
+      // }
     ],
   },
   {
@@ -36,12 +36,13 @@ module.exports = [//导航栏配置
       {text: 'SQL', link: '/base/sql.md'}
     ]
   },
-  {// 一些小游戏
-    text: '🐱‍💻Games',
-    items: [
-      {text: 'snake', link: '/games/snake.html'},
-    ]
-  },
+  {  text: 'More', link: '/news/' },
+  // {// 一些小游戏
+  //   text: '🐱‍💻Games',
+  //   items: [
+  //     {text: 'snake', link: '/games/snake.html'},
+  //   ]
+  // },
   // {//下拉列表式的导航栏
   //   text: 'Languages',
   //   ariaLabel: 'Language Menu',

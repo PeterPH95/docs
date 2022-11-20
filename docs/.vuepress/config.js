@@ -9,10 +9,11 @@ module.exports = {
   description: 'Peter Pan 的个人练习站',
   head: headConf,
   plugins: pluginsConf,
+  
   themeConfig: {
     lastUpdated: '更新时间', // 最后更新时间展示
     nav: navConf,
-    displayAllHeaders: true,//显示所有页面的标题链接
-    sidebar: sidebarConf
+    displayAllHeaders: false,//显示所有页面的标题链接
+    //sidebar: sidebarConf,// 与 home 中的 readme 互斥，需要注释 home: true 才生效
   }
 }

@@ -1,13 +1,12 @@
 ---
-title: 补充
-sidebarDepth: 4
+title: JavaScript
 sidebar: auto
 ---
 
-## JavaScript
+# JavaScript
 
 
-### `require`与`import`的区别
+## `require`与`import`的区别
 - 1.require是CommonJS规范的模块化语法，import是ECMAScript 6规范的模块化语法；
 - 2.require是运行时加载，import是编译时加载；
 - 3.require可以写在代码的任意位置，import只能写在文件的最顶端且不可在条件语句或函数作用域中使用；
@@ -23,7 +22,7 @@ console.log(foo); //bar
 setTimeout(() => console.log(foo), 500); //baz
 ```
 
-### js 中操作符 `!` `~~` 和 `!!`[参考](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Logical_NOT#double_not_!!)
+## js 中操作符 `!` `~~` 和 `!!`[参考](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Logical_NOT#double_not_!!)
 - ! 会将后面的数据先转成布尔值，然后取反；
 - ~~ 利用符号进行的类型转换，转换成数字类型；
 - ~~ 取整的方式比`Math.floor()`方法更快，正数向下取整，负数向上取整；
@@ -56,7 +55,7 @@ console.log(r) //false
 1.2 | 0 //1
 ```
 
-### `==` `+` 的隐式类型转换
+## `==` `+` 的隐式类型转换
 - 类型相同
   - 基本类型，直接比较值
   - 引用类型比较指针
@@ -112,7 +111,7 @@ undefined == undefined //true
 ```
 
 
-### `valueOf()` 和 `toString()`的特殊调用
+## `valueOf()` 和 `toString()`的特殊调用
 ```js
 /**
  * []重写了toString()方法，默认调用join()，{}未重写toString()返回数据类型
@@ -122,7 +121,7 @@ console.log({}.valueOf(), {}.toString()) // {}, [object Object]
 ```
 
 
-### typeof 
+## typeof 
 :::warning
 typeof返回的类型:number、string、boolean、undefined、function、object共6种。后ES6新又增 symbol
 注意：
@@ -138,7 +137,7 @@ Array.isArray([]) // true
 ```
 
 
-### 原型链继承问题
+## 原型链继承问题
 ```js
 function F(){};
 Object.prototype.a = function(){console.log('a')};
@@ -163,7 +162,7 @@ Function.prototype.__proto__ === [Function.prototype 构造函数的].prototype 
 ```
 
 
-### 连等 var a=b=1 声明问题
+## 连等 var a=b=1 声明问题
 > 语句 var a=b=1 是语句 b = 1 和 var a = b 的简写， b 成为一个全局变量（**没有var前缀**）
 ```js{3-5}
 function fn(){
@@ -178,7 +177,7 @@ console.log(a);//a在fn里面的作用域，外面访问不了，报错
 ```
 
 
-### `this` 指向问题?
+## `this` 指向问题?
 > - 对于箭头函数：this指向取决于该箭头函数**同级作用域**的this指向，又由于**对象不能形成自己的作用域**，因此其作用域为全局作用域，箭头函数的this初始绑定Window对象
 > - 对于普通函数：this绑定了它的调用者
 ```js

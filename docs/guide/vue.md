@@ -1,6 +1,5 @@
 ---
 title: Vue学习
-sidebarDepth: 4
 sidebar: auto
 ---
 

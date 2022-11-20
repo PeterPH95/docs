@@ -1,6 +1,5 @@
 ---
 title: TypeScript
-sidebarDepth: 5
 sidebar: auto
 ---
 
