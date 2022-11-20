@@ -22,6 +22,14 @@ npm install ts-node -g
 ts-node hello.ts
 ```
 
+## 其它
+
+- [tsconfig.json 文件](https://blog.csdn.net/qq1195566313/article/details/122525099?spm=1001.2014.3001.5501)
+-  [命名空间namespace](https://blog.csdn.net/qq1195566313/article/details/122544685?spm=1001.2014.3001.5501)
+- [三斜线指令](https://blog.csdn.net/qq1195566313/article/details/122554824?spm=1001.2014.3001.5501)`///<reference path="./index2.ts" />`
+- [声明文件declare](https://blog.csdn.net/qq1195566313/article/details/122558474?spm=1001.2014.3001.5501)
+- [Mixins混入](https://blog.csdn.net/qq1195566313/article/details/122602896?spm=1001.2014.3001.5501)
+
 ## 类型
 
 ### number, string, boolean
@@ -688,7 +696,7 @@ console.log(e)
 
 ### [DOM 和 BOM 的内置对象](https://github.com/microsoft/TypeScript/blob/main/src/lib/es2015.promise.d.ts)
 
-- **`Document`、`HTMLElement`、`Event`、`NodeList`**等
+- `Document`、`HTMLElement`、`Event`、`NodeList`等
 
 ```typescript
 let body: HTMLElement = document.body;
@@ -841,3 +849,7 @@ promise().then(res=>{
 })
 ```
 
+## 装饰器Decorator
+
+- 装饰器使用类似注解的方式，获取类原型，并且给类增加属性或者方法，正如其名**"装饰器"**
+- 装饰器是一种特殊类型的声明，它能够被附加到[类声明](https://www.tslang.cn/docs/handbook/decorators.html#class-decorators)，[方法](https://www.tslang.cn/docs/handbook/decorators.html#method-decorators)， [访问符](https://www.tslang.cn/docs/handbook/decorators.html#accessor-decorators)，[属性](https://www.tslang.cn/docs/handbook/decorators.html#property-decorators)或[参数](https://www.tslang.cn/docs/handbook/decorators.html#parameter-decorators)上。
