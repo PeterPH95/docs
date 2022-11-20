@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/PeterPH95/docs.git"
   },
-  "keywords": ["Vuepress", "fontend", "Vue"],
+  "keywords": ["Vuepress", "frontend", "Vue"],
   "author": "Peter Pan",
   "license": "ISC",
   "bugs": {

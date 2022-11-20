@@ -2,8 +2,7 @@ module.exports = [//导航栏配置
   { text: 'Home', link: '/' },
   { text: 'About', link: '/about' },
   { text: 'Algorithm', link: '/algorithm/' },
-  { 
-    text: 'Guide', 
+  { text: 'Guide', 
     items: [
       { text: 'JavaScript',link: '/guide/JavaScript.md' },
       { text: 'CSS',link: '/guide/css.md' },
@@ -12,12 +11,10 @@ module.exports = [//导航栏配置
       { text: 'Deploy',link: '/guide/deploy.md' },
     ]
   },
-  {
-    text: 'Tool',
+  { text: 'Tool',
     // ariaLabel: '指令',
     items: [
-      {
-        text: '指令',
+      { text: '指令',
         items: [
           { text: 'Git', link: '/tools/git.md' },
           { text: 'Npm', link: '/tools/npm.md' },
@@ -30,13 +27,12 @@ module.exports = [//导航栏配置
       // }
     ],
   },
-  {
-    text: 'Base',
+  { text: 'Base',
     items: [
       {text: 'SQL', link: '/base/sql.md'}
     ]
   },
-  {  text: 'More', link: '/news/' },
+  { text: 'More', link: '/news/' },
   // {// 一些小游戏
   //   text: '🐱‍💻Games',
   //   items: [

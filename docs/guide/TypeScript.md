@@ -106,6 +106,84 @@ let str: string = 'haha'
 str = unusable // 报错
 ```
 
+
+
+### Symbol
+
+- 构造函数只接收 **string** 和 **number**类型的参数
+- 返回值是唯一的标识（内存地址不同），每个都互不相同，❗❗❗不支持语法 `new Symbol()`
+- symbol类型作对象的键值的时候，无法通过一般的遍历方法
+
+```typescript
+// s1 ≠ s2
+const s1 = Symbol()
+const s2 = Symbol()
+```
+
+#### Symbol做键值
+
+```typescript
+// 做对象的键值
+const symbol1 = Symbol('666')
+const symbol2 = Symbol('777')
+const obj1= {
+   [symbol1]: '小满',
+   [symbol2]: '二蛋',
+   age: 19,
+   sex: '女'
+}
+
+// 普通的遍历方法拿不到 symbol 的键值
+// 1 for in 遍历
+for (const key in obj1) {
+   // 注意在console看key,是不是没有遍历到symbol1
+   console.log(key)
+}
+// 2 Object.keys 遍历
+Object.keys(obj1)
+console.log(Object.keys(obj1))
+// 3 getOwnPropertyNames
+console.log(Object.getOwnPropertyNames(obj1))
+// 4 JSON.stringfy
+console.log(JSON.stringify(obj1))
+
+// 可以拿到键值的遍历方法
+// 1 拿到具体的symbol 属性,对象中有几个就会拿到几个
+Object.getOwnPropertySymbols(obj1)
+console.log(Object.getOwnPropertySymbols(obj1))
+// 2 es6 的 Reflect 拿到对象的所有属性
+Reflect.ownKeys(obj1)
+console.log(Reflect.ownKeys(obj1))
+```
+
+#### Symbol迭代器
+
+- `Symbol.iterator` 在 类数组：`arguments，NodeList  `或者  `Array，Map，Set` 等都实现了迭代器，for of 是迭代器的语法糖
+
+```typescript
+let arr: Array<number> = [1,3,5,7]
+const generate = (erg: any) => {
+    let it: Iterator<any> = erg[Symbol.iterator]()
+    let next: any = { done: false }
+    while ( !next.done ){
+        next = it.next()
+        if ( !next.done ){
+            console.log(next.value)
+        }
+    }  
+}
+/* 实际被迭代的对象，done作为结束的标识符
+{ value: 1, done: false }
+{ value: 3, done: false }
+{ value: 5, done: false }
+{ value: 7, done: false }
+{ value: undefined, done: true }*/
+
+generate(arr)// 1 3 5 7
+```
+
+
+
 ### 数组
 
 ```typescript
@@ -168,6 +246,8 @@ let excel: [string, string, number][] = [
     ['ts', 'js', '1111']// 报错
 ]
 ```
+
+
 
 ### 枚举
 
@@ -254,9 +334,11 @@ console.log(nameOfA); // fall
 
 ### never
 
-> `never`类型是那些总是会抛出异常或根本就不会有返回值的函数表达式或箭头函数表达式的返回值类型
+> `never`类型是那些总是会**抛出异常**或**根本就不会有返回值**的函数表达式或箭头函数表达式的返回值类型
 >
-> `never`类型是任何类型的子类型，也可以赋值给任何类型；然而，*没有*类型是`never`的子类型或可以赋值给`never`类型（除了`never`本身之外）。 即使 `any`也不可以赋值给`never`。
+> `never`类型是任何类型的子类型，也可以赋值给任何类型；
+>
+> 然而，没有类型是`never`的子类型或可以赋值给`never`类型（除了`never`本身之外）。 即使 `any`也不可以赋值给`never`。
 
 ```typescript
 // 返回never的函数必须存在无法达到的终点
@@ -274,6 +356,10 @@ function infiniteLoop(): never {
     while (true) {
     }
 }
+
+// 其它确定的类型不能赋值给 never
+let str: string = "hahah"
+let nv: never = str// 报错
 ```
 
 ### interface（接口）
@@ -340,6 +426,70 @@ class Person extends A implements PersonClass,PersonClass2 {
 }
 ```
 
+## 泛型
+
+```typescript
+// 1. 单类泛型
+function add<T>(a: T, b: T): Array<T> {
+    return [a, b]
+}
+add<number>(1,3)
+// 可简写，TS会类型断言 
+add(1,3)
+add<string>('1','2')
+
+// 2. 多类泛型
+function exam<T, U>(a: T, b: U): Array<T | U> {
+    return [a, b]
+}
+exam<boolean, number>(false, 12)
+```
+
+### 接口对泛型约束
+
+```typescript
+// 限制传入的参数必须有 length 属性
+interface Len {
+    length: number
+}
+function getLength<T extends Len>(arg: T): number{
+    return arg.length
+}
+getLength("123465")
+```
+
+### keyof 约束对象
+
+```typescript
+// 限制传入的 key 值
+function prop<T, K extends keyof T>(obj: T, key: K){	}
+let o = {a:1, b:2, c:3}
+
+prop(o, 'a')
+prop(o, 'd')// 报错 K 的类型为联合类型 "a" | "b" | "c"
+```
+
+### 泛型类
+
+```typescript
+// 实例化时传入类型
+class Sub<T>{
+    //attr: T[] = []
+    attr: Array<T> = []
+    add(a: T): T[] {
+        return [a]
+    }
+}
+
+let s = new Sub<number>()
+s.attr = [1,2,3]
+s.add(123)
+ 
+let str = new Sub<string>()
+str.attr = ['1','2','3']
+str.add('123')
+```
+
 
 
 ## 联合类型
@@ -352,6 +502,33 @@ const fn = (type: number | boolean): boolean {// 数据库不能返回布尔类�
     return !!type
 }
 ```
+
+### 类型别名
+
+```typescript
+// 1. 类型推论
+let str = "ppp" // 自动推论 str 为字符串
+str = 123 // 报错
+
+// 2. 类型别名
+type str = string // str 代替 string
+let s: str = 'ppp'
+
+// 3. 函数别名
+type fn = () => string
+let f: fn = () => "lala"
+
+// 4. 联合类型别名
+type ss = string | number |boolean
+let mm: ss = 123
+let gg: ss = false
+
+// 5. 字面量别名
+type val = "off" | "on" | boolean
+let v: val = true
+```
+
+
 
 ## 交叉类型
 
