@@ -1,3 +1,8 @@
+---
+title: webpack
+sidebar: auto
+---
+
 # webpack构建TypeScript[项目](https://blog.csdn.net/qq1195566313/article/details/122708348?spm=1001.2014.3001.5501)
 
 - [参考](https://www.bilibili.com/video/BV1wR4y1377K?p=25&vd_source=3222fe640ca9017c65847877e892e557)
