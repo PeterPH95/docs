@@ -33,8 +33,7 @@ module.exports = [//导航栏配置
         items: [
           { text: 'Git', link: '/tools/git.md' },
           { text: 'Npm', link: '/tools/npm.md' },
-          { text: 'RegExp', link: '/tools/regExp.md' },
-          { text: 'SQL', link: '/tools/sql.md' }
+          { text: 'RegExp', link: '/tools/regExp.md' }
         ]
       },
       // {
