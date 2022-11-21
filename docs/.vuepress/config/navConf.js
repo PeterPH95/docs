@@ -2,35 +2,45 @@ module.exports = [//导航栏配置
   { text: 'Home', link: '/' },
   { text: 'About', link: '/about' },
   { text: 'Algorithm', link: '/algorithm/' },
-  { text: 'Guide', 
+  {
+    text: 'Guide',
     items: [
-      { text: 'JavaScript',link: '/guide/JavaScript.md' },
-      { text: 'CSS',link: '/guide/css.md' },
-      { text: 'TypeScript', link: '/guide/TypeScript.md' },
-      { text: 'Vue',link: '/guide/vue.md' },
-      { text: 'Deploy',link: '/guide/deploy.md' },
+      {
+        text: '基础',
+        items: [
+          { text: 'JavaScript', link: '/guide/JavaScript.md' },
+          { text: 'CSS', link: '/guide/css.md' },
+          { text: 'TypeScript', link: '/guide/TypeScript.md' },
+          { text: 'Vue', link: '/guide/vue.md' },
+        ]
+      },
+      {
+        text: '扩展',
+        items: [
+          { text: 'VuePress', link: '/guide/VuePress.md' },
+          { text: 'Deploy', link: '/guide/deploy.md' },
+          { text: 'Webpack', link: '/guide/webpackTS.md' },
+        ]
+      }
     ]
   },
-  { text: 'Tool',
+  {
+    text: 'Tool',
     // ariaLabel: '指令',
     items: [
-      { text: '指令',
+      {
+        text: '必备',
         items: [
           { text: 'Git', link: '/tools/git.md' },
           { text: 'Npm', link: '/tools/npm.md' },
-          { text: 'Plugin', link: '/tools/plug.md'},
-          { text: 'RegExp', link: '/tools/regExp.md'},
+          { text: 'RegExp', link: '/tools/regExp.md' },
+          { text: 'SQL', link: '/tools/sql.md' }
         ]
       },
       // {
       //   text: '扩展', items: []
       // }
     ],
-  },
-  { text: 'Base',
-    items: [
-      {text: 'SQL', link: '/base/sql.md'}
-    ]
   },
   { text: 'More', link: '/news/' },
   // {// 一些小游戏
