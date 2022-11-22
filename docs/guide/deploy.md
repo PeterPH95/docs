@@ -9,6 +9,10 @@ sidebar: auto
 - 3. 若要部署到`gh-pages`布置静态页面，参考[GitHub Pages](https://cli.vuejs.org/zh/guide/deployment.html#github-pages)
 
 
+## 本地项目关联远程仓库
+![关联仓库](./assets/deploy1.png)
+
+
 ## 项目本地运行，修改端口号
 ```js
 // package.json 文件中配置
