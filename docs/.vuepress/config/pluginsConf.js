@@ -63,7 +63,7 @@ module.exports = [
           position: "right", // 显示位置：left/right(default: 'right')
           width: 135, // 模型的长度(default: 135)
           height: 300, // 模型的高度(default: 300)
-          hOffset: 70, //  水平偏移(default: 65)
+          hOffset: 140, //  水平偏移(default: 65)
           vOffset: 0, //  垂直偏移(default: 0)
         },
         mobile: {
