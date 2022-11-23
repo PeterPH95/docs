@@ -9,8 +9,8 @@ sidebar: auto
 ## 将进酒
 <div style="
 padding: 5px 0;
-ont-size: 1.2rem; 
-font-family: 仿宋; 
+font-size: 1.2rem; 
+font-family: 幼圆; 
 text-align: center;
 background-color: #282c34;
 color: #fff">
